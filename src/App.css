@@ -1,0 +1,253 @@
+/*
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+  --header-height: 80px;
+  --header-bg: rgba(0,0,0,.12);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body{
+  overflow-x: hidden;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+ul, li {
+  list-style: none;
+}
+input {
+  all: unset;
+}
+button {
+  all: unset;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+/* header/nav css */
+header {
+  width: 100%;
+  height: var(--header-height);
+  background: var(--header-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+header nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 200px;
+}
+nav .nav_logo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+nav .nav_logo img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+nav .nav_logo span{
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+nav .nav_links ul {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+nav .nav_links a.active{
+  color: #ff4444;;
+}
+nav .menu-icon {
+  display: none;
+}
+
+
+/* homepage css */
+.homepage{
+  min-height: 100vh;
+  background-image: linear-gradient( #000000ad, #000000ad),url(./assets/images/home_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.homepage .home_heading h1{
+  font-size: 90px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  margin-top: var(--header-height);
+}
+.homepage .home_btns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.homepage .home_btns .home_order-btn {
+  background: #ff4444;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.homepage .home_btns span {
+  color: white;
+  font-size: 15px;
+}
+.homepage .home_btns .store_btns {
+  display: flex;
+  gap: 20px;
+}
+.homepage .home_btns .store_btns img {
+  width: 170px;
+  height: 50px;
+}
+
+
+/* footer css */
+footer{
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background: rgb(3,2,1);
+  background: linear-gradient(90deg, rgba(3,2,1,1) 0%, rgb(0 0 0 / 96%) 50%, rgba(3,2,1,1) 100%);
+}
+footer span{
+  color: #676767;;
+}
+footer a{
+  color: #ffffffb5;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
+/* main css */
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  margin-top: var(--header-height);
+}
+
+/* media query for mobile devices */
+@media (max-width: 950px) {
+  header nav {
+    margin: 0 20px;
+  }
+  nav .nav_links {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    backdrop-filter: blur(2px);
+  }
+  nav .nav_links.active {
+    display: flex;
+  }
+  nav .nav_links ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 90px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+  }
+  nav .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+  }
+  .homepage .home_heading h1{
+    font-size: 40px;
+  }
+  .homepage .home_btns .store_btns img {
+    width: 120px;
+    height: 40px;
+  }
+  .homepage .home_btns .home_order-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
